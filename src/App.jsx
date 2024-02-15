@@ -6,7 +6,7 @@ function App() {
   return (
     <>
       <Header />
-      <main className='min-h-screen'>
+      <main className='min-h-screen pt-[4.5rem]'>
         <Outlet />
       </main>
     </>

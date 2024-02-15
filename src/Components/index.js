@@ -8,6 +8,8 @@ import QuestionDisplayCard from "./QuestionDisplayCard";
 import Login from "./Login";
 import InputComponent from "./InputComponent";
 import Signup from "./Signup";
+import AskQuestionForm from "./AskQuestionForm";
+import RTE from "./RTE";
 
 export {
     Container,
@@ -20,4 +22,6 @@ export {
     Login,
     InputComponent,
     Signup,
+    AskQuestionForm,
+    RTE,
 }

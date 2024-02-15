@@ -16,7 +16,7 @@ function Signup() {
     }
 
     return (
-        <div className="flex items-center mx-4 justify-center w-full mt-20">
+        <div className="flex items-center mx-4 justify-center w-full">
             <div className={`flex flex-col w-full max-w-lg bg-gray-100 rounded-xl p-5 border border-black/20`}>
                 {error && <p className="text-red-600 mt-2 text-center">{error}</p>}
 

@@ -20,7 +20,7 @@ function Login() {
     }
 
     return (
-        <div className='w-full flex flex-col justify-center pt-20'>
+        <div className='w-full flex flex-col justify-center mb-10'>
             <form className="border border-black/50 p-4 rounded-lg bg-neutral-50 mx-auto"
                 onSubmit={handleSubmit(login)}>
                 {error &&
