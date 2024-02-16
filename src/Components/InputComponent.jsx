@@ -5,7 +5,7 @@ function InputComponent({ label, type = "text", className = '', ...props }, ref)
     const id = useId();
 
     return (
-        <div className='w-full mb-4'>
+        <div className='w-full'>
             {label && <label
                 className='inline-block pl-1 mb-1 font-semibold text-lg'
                 htmlFor={id}>

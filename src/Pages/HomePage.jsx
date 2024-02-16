@@ -12,14 +12,6 @@ function HomePage() {
                 <QuestionDisplayCard />
                 <QuestionDisplayCard />
                 <QuestionDisplayCard />
-                <QuestionDisplayCard />
-                <QuestionDisplayCard />
-                <QuestionDisplayCard />
-                <QuestionDisplayCard />
-                <QuestionDisplayCard />
-                <QuestionDisplayCard />
-                <QuestionDisplayCard />
-
             </div>
         </div>
     )
