@@ -10,6 +10,8 @@ import InputComponent from "./InputComponent";
 import Signup from "./Signup";
 import AskQuestionForm from "./AskQuestionForm";
 import RTE from "./RTE";
+import Loader from "./Loader";
+import AuthLayout from "./AuthLayout";
 
 export {
     Container,
@@ -24,4 +26,6 @@ export {
     Signup,
     AskQuestionForm,
     RTE,
+    Loader,
+    AuthLayout,
 }

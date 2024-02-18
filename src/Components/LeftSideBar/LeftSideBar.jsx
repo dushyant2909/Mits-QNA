@@ -42,7 +42,7 @@ function LeftSideBar() {
             <Link to={'/ask-question'}>
                 <Button
                     type="submit"
-                    className="w-full mt-5 text-lg font-semibold shadow-md">
+                    className="w-full mt-5 text-lg font-semibold shadow-md hover:bg-blue-800">
                     Ask Question
                 </Button>
             </Link>

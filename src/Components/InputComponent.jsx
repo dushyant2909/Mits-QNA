@@ -1,6 +1,6 @@
 import React, { forwardRef, useId } from 'react'
 
-function InputComponent({ label, type = "text", className = '', ...props }, ref) {
+function InputComponent({ label, required = "true", type = "text", className = '', ...props }, ref) {
 
     const id = useId();
 
@@ -13,6 +13,7 @@ function InputComponent({ label, type = "text", className = '', ...props }, ref)
             </label>
             }
             <input type={type}
+                required
                 className={`px-3 py-2 rounded-lg bg-white
                 text-black outline-none focus:bg-gray-50 
                 focus:border-gray-400

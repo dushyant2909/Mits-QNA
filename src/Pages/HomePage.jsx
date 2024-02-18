@@ -3,7 +3,7 @@ import { LeftSideBar, QuestionDisplayCard } from '../Components/index'
 
 function HomePage() {
     return (
-        <div className='min-h-screen grid grid-cols-12 px-8 overflow-y-auto'>
+        <div className='min-h-screen grid grid-cols-12 mt-[4.5rem] px-8'>
             <div className="col-span-2 border-r border-r-black/20 py-5 px-5">
                 <LeftSideBar />
             </div>
@@ -12,6 +12,9 @@ function HomePage() {
                 <QuestionDisplayCard />
                 <QuestionDisplayCard />
                 <QuestionDisplayCard />
+                <QuestionDisplayCard />
+                <QuestionDisplayCard />
+
             </div>
         </div>
     )
