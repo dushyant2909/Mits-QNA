@@ -6,14 +6,14 @@ dotenv.config()
 const userSchema = new mongoose.Schema({
     username: String,
     password: String,
-    questions: {type: [String], required: false},
+    questions: { type: [String], required: false },
 })
 const User = mongoose.model('users', userSchema)
 
 //Question schema
 const questionSchema = new mongoose.Schema({
     question: String,
-    answer: String,
+    answers: { type: [String], required: false },
     user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 })
 const Question = mongoose.model('questions', questionSchema)
@@ -28,6 +28,7 @@ const connectDB = async () => {
         console.log('Error connecting to the database', err)
     }
 }
+
 
 module.exports = { connectDB, User, Question }
 
