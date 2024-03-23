@@ -2,19 +2,22 @@ const mongoose = require('mongoose')
 const dotenv = require('dotenv')
 dotenv.config()
 
+
 //User schema
 const userSchema = new mongoose.Schema({
-    username: String,
+    username: {type: String, unique: true},
     password: String,
-    questions: { type: [String], required: false },
+    // questions: [{type: mongoose.Schema.Types.ObjectId, ref: 'Question'}],
+    questions: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Question' }]
 })
 const User = mongoose.model('users', userSchema)
 
 //Question schema
 const questionSchema = new mongoose.Schema({
-    question: String,
+    title: String,
+    body: String,
     answers: { type: [String], required: false },
-    user: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
+    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }
 })
 const Question = mongoose.model('questions', questionSchema)
 

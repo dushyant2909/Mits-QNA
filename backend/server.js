@@ -4,6 +4,7 @@ const { connectDB } = require('./db')
 const jwt = require('jsonwebtoken')
 const dotenv = require('dotenv')
 const { protect } = require('./modules/middlewares')
+const router = require('./router')
 
 dotenv.config()
 const app = express()
@@ -14,7 +15,10 @@ app.use(express.json())
 
 //routes
 app.get('/', (req, res) => res.send('Hello MITS!'))
-app.get('/api', protect, (req, res) => res.send('I am Authenticated!'))
+// app.get('/api', protect, (req, res) => {
+//     res.send('I am Authenticated!')
+// })  
+app.use('/api', protect, router)  
 
 // user routes
 app.post('/signup', signUpHandler)
