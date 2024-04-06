@@ -10,6 +10,7 @@ import { auth, provider } from '../firebase';
 import { useDispatch } from 'react-redux';
 import authService from '../appwrite/auth';
 import { login as authLogin } from '../store/slices/authSlice'
+import axios from 'axios';
 
 function Login() {
     const [passwordToggler, setpasswordToggler] = useState(false);
@@ -25,22 +26,78 @@ function Login() {
         setloader(false);
     }, []);
 
+    // const login = async (data) => {
+    //     console.log("DataA::", data);
+    //     setError("");
+    //     setloader(true);
+    //     try {
+    //         const session = await authService.login(data);
+    //         console.log("Session::", session);
+    //         if (session) {
+    //             const userData = await authService.getCurrentUser();
+    //             if (userData)
+    //                 dispatch(authLogin(userData))
+    //             toast.success("Logged in successfully")
+    //             navigate('/')
+    //         }
+    //     } catch (error) {
+    //         console.log("Login.jsx error::", error);
+    //         setError(error.message);
+    //         toast.error("Failed to login")
+    //     }
+    //     finally {
+    //         setloader(false);
+    //     }
+    // }
+
     const login = async (data) => {
-        console.log("DataA::", data);
         setError("");
         setloader(true);
         try {
-            const session = await authService.login(data);
-            if (session) {
-                const userData = await authService.getCurrentUser();
-                if (userData)
-                    dispatch(authLogin(userData))
-                toast.success("Logged in successfully")
-                navigate('/')
+            const response = await axios.post('/api/v1/users/login', data);
+            console.log(response); // Assuming the backend returns some data
+            if (response.status === 200) {
+                dispatch(authLogin(response.data.data.user))
+                navigate('/');
+            }
+            else {
+                // Handle other response statuses (e.g., validation errors)
+                setError(response.data.message); // Assuming the backend sends error messages as JSON
             }
         } catch (error) {
-            setError(error);
-            toast.error("Failed to login")
+            // Handle network errors or other exceptions
+            if (error.response) {
+                // The request was made and the server responded with a status code
+                let errorMessage = 'Failed to login'; // Default error message
+                try {
+                    // Parse the HTML response to extract the error message
+                    const parser = new DOMParser();
+                    const htmlDoc = parser.parseFromString(error.response.data, 'text/html');
+                    const preElement = htmlDoc.querySelector('pre');
+                    if (preElement) {
+                        // Extract the error message and format it
+                        const errorText = preElement.innerText.trim();
+
+                        // Search for the specific error message pattern
+                        const errorPattern = /Error: (.*)/; // This regex captures the message after "Error: "
+                        const match = errorPattern.exec(errorText);
+                        if (match && match.length > 1) {
+                            errorMessage = match[1]; // Extract the specific error message
+                        }
+                    }
+                } catch (parseError) {
+                    console.error('Error parsing HTML response:', parseError);
+                }
+                setError(errorMessage);
+            } else if (error.request) {
+                // The request was made but no response was received
+                setError('No response received from the server');
+            } else {
+                // Something else happened in making the request
+                setError('Error in processing the request');
+            }
+            console.error('Error in login:', error);
+
         }
         finally {
             setloader(false);
@@ -91,8 +148,8 @@ function Login() {
                                     message: "Password field is reaquired"
                                 },
                                 minLength: {
-                                    value: 4,
-                                    message: "Password length must be atleast 4"
+                                    value: 0,
+                                    message: "Password length must be atleast 8 characters"
                                 }
                             })} />
                         <div className="text-red-700 font-semibold px-1">{errors.password?.message}</div>

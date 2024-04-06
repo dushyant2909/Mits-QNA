@@ -8,7 +8,6 @@ import LogoutBtn from './LogoutBtn'
 
 function Header() {
     const authStatus = useSelector((state) => state.auth.status);
-    console.log("AUthstatus in header::", authStatus);
     return (
         <header className='fixed top-[0px] z-[1000000] min-h-[5vh] w-full'>
             <div className="flex w-full items-center justify-around flex-wrap border border-black/20 bg-gray-300 shadow-md px-2">

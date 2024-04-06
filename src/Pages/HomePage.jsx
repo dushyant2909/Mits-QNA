@@ -8,12 +8,12 @@ function HomePage() {
                 <LeftSideBar />
             </div>
             <div className="col-span-10 flex flex-col gap-4 h-screen overflow-y-auto mt-5 px-8 py-5 pb-10 w-full ">
-                <QuestionDisplayCard />
-                <QuestionDisplayCard />
-                <QuestionDisplayCard />
-                <QuestionDisplayCard />
-                <QuestionDisplayCard />
-                <QuestionDisplayCard />
+                <QuestionDisplayCard question={"How to apply for MMVY Scholarship"} />
+                <QuestionDisplayCard question={"From where to get NOC Certificate"} />
+                <QuestionDisplayCard question={"How to pay college fees through IMS portal"} />
+                <QuestionDisplayCard question={"What are the minimum marks to qualify a Semester"} />
+                <QuestionDisplayCard question={"Details about internship in 6th and 8th Semester"} />
+                <QuestionDisplayCard question={"How to find CGPA out of SGPA"}/>
 
             </div>
         </div>
