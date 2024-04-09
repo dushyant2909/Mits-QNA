@@ -16,7 +16,10 @@ function QuestionDisplayCard({question}) {
         <div className="flex items-center justify-between">
           <div className="flex gap-4">
             {tags.map((tag) => (
-              <div className="bg-gray-200 py-1 px-3 flex items-center justify-center rounded-lg" key={tag}>
+              // <div className="bg-gray-200 py-1 px-3 flex items-center justify-center rounded-lg" key={tag}>
+              //   {tag}
+              // </div>
+              <div className='flex items-center justify-center badge badge-outline badge-info' key={tag}>
                 {tag}
               </div>
             ))}

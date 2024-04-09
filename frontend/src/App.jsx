@@ -1,7 +1,8 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { login, logout, selectUser } from './store/slices/authSlice'
-import { Header, Loader } from './Components/index'
+import { Header, Loader, LeftSideBar } from './Components/index'
+import {Navbar} from './Components/index'
 import Footer from './Components/Footer'
 import { Outlet } from 'react-router-dom'
 
@@ -38,12 +39,20 @@ function App() {
   }
   return (
     <>
-      <Header />
+      {/* <Header />
+      <Navbar/>
       <main className='min-h-screen'>
         <Outlet />
       </main>
-      {/* <Footer /> */}
-      <Toaster />
+      <Toaster /> */}
+      
+      <Navbar />
+      <div className="col-span-2 border-r border-r-black/20 py-5 px-5">
+        <LeftSideBar />
+      </div>
+      <Outlet />
+      <Footer />
+     
     </>
   )
 }

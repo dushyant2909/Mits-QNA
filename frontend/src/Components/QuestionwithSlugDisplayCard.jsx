@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import dislike from '../../public/dislike.svg'
 
 function QuestionwithSlugDisplayCard({ question }) {
     const { title, tags, votes, answers, askedBy, slug, desc, likes, dislikes } = question
@@ -17,7 +18,10 @@ function QuestionwithSlugDisplayCard({ question }) {
                 <div className="flex items-center justify-between">
                     <div className="flex gap-4">
                         {tags.map((tag) => (
-                            <div className="bg-gray-200 py-1 px-3 flex items-center justify-center rounded-lg" key={tag}>
+                            // <div className="bg-gray-200 py-1 px-3 flex items-center justify-center rounded-lg" key={tag}>
+                            //     {tag}
+                            // </div>
+                            <div className='flex items-center justify-center badge badge-outline badge-info' key={tag}>
                                 {tag}
                             </div>
                         ))}
@@ -25,8 +29,15 @@ function QuestionwithSlugDisplayCard({ question }) {
                 </div>
                 <div className="flex items-center justify-between">
                     <div className='flex gap-4'>
-                        <div className="">{likes} likes</div>
-                        <div className="">{dislikes} dislikes</div>
+                        {/* conditional fill="red" */}
+                        <button className="">
+                            <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="red" viewBox="0 0 24 24" stroke="currentColor"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4.318 6.318a4.5 4.5 0 000 6.364L12 20.364l7.682-7.682a4.5 4.5 0 00-6.364-6.364L12 7.636l-1.318-1.318a4.5 4.5 0 00-6.364 0z" /></svg>
+                            {likes}
+                        </button>
+                        <button className="btn btn-outline btn-error ">
+                            {/* <img src="dislike.svg" alt="" className='w-4 h-4'/> */}
+                            {dislikes}
+                        </button>
                     </div>
                     <div className="text-sm pr-3 text-gray-700 hover:text-gray-800">asked by: {askedBy}</div>
                 </div>

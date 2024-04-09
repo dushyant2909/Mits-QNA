@@ -13,6 +13,8 @@ import RTE from "./RTE";
 import Loader from "./Loader";
 import AuthLayout from "./AuthLayout";
 import QuestionwithSlug from "./QuestionwithSlug";
+import Navbar from "./Navbar";
+import QuestionwithSlugDisplayCard from "./QuestionwithSlugDisplayCard";
 
 export {
     Container,
@@ -29,5 +31,5 @@ export {
     RTE,
     Loader,
     AuthLayout,
-    QuestionwithSlug
+    QuestionwithSlug, Navbar, QuestionwithSlugDisplayCard
 }

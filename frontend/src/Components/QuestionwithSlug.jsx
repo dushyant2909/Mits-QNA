@@ -13,7 +13,7 @@ function QuestionwithSlug() {
   console.log(question);
   console.log(slug);
   return (
-    <div className='min-h-screen grid grid-cols-12 mt-[4.5rem] px-8'>
+    <div className='min-h-screen grid grid-cols-12 px-8'>
       <div className="col-span-2 border-r border-r-black/20 py-5 px-5">
         <LeftSideBar />
       </div>

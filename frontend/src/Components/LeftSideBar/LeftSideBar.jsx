@@ -33,7 +33,7 @@ function LeftSideBar() {
             <ul className='flex flex-col gap-5'>
                 {options.map((option) => (
                     <Link to={option.slug} key={option.name} className="flex items-center
-                    cursor-pointer transition-all hover:bg-gray-300 px-3 py-1 rounded-full gap-3 text-2xl">
+                    cursor-pointer transition-all hover:bg-gray-300 px-3 py-1 rounded-full gap-3 text-xl">
                         <span>{option.icon}</span>
                         <span>{option.name}</span>
                     </Link>
@@ -42,7 +42,7 @@ function LeftSideBar() {
             <Link to={'/ask-question'}>
                 <Button
                     type="submit"
-                    className="w-full mt-5 text-lg font-semibold shadow-md hover:bg-blue-800">
+                    className="w-full text-white mt-5 text-lg shadow-md hover:bg-blue-800">
                     Ask Question
                 </Button>
             </Link>
