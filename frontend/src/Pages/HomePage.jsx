@@ -1,6 +1,7 @@
 import React from 'react'
 import { LeftSideBar, QuestionDisplayCard } from '../Components/index'
 import { Questions } from '../../data'
+import Giscus from '@giscus/react'
 
 function HomePage() {
     const questions = Questions
@@ -11,8 +12,23 @@ function HomePage() {
             </div>
             <div className="col-span-10 flex flex-col gap-4 h-screen overflow-y-auto mt-5 px-8 py-5 pb-10 w-full ">
                 {questions.map((question) => (
-                    <QuestionDisplayCard key={question.id} {...question}/>
+                    <QuestionDisplayCard key={question.id} question={question} />
                 ))}
+                <Giscus
+                    id="answers"
+                    repo="Jain101/blogcomments"
+                    repoId="R_kgDOK_Bw2Q"
+                    category="Q&A"
+                    categoryId="DIC_kwDOK_Bw2c4CcFnT"
+                    mapping="url"
+                    term="Welcome to @giscus/react component!"
+                    reactionsEnabled="1"
+                    emitMetadata="0"
+                    inputPosition="top"
+                    theme="light"
+                    lang="en"
+                    loading="lazy"
+                />
             </div>
         </div>
     )

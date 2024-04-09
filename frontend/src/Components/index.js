@@ -12,6 +12,7 @@ import AskQuestionForm from "./AskQuestionForm";
 import RTE from "./RTE";
 import Loader from "./Loader";
 import AuthLayout from "./AuthLayout";
+import QuestionwithSlug from "./QuestionwithSlug";
 
 export {
     Container,
@@ -28,4 +29,5 @@ export {
     RTE,
     Loader,
     AuthLayout,
+    QuestionwithSlug
 }

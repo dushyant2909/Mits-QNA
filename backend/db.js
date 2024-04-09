@@ -5,7 +5,7 @@ dotenv.config()
 
 //User schema
 const userSchema = new mongoose.Schema({
-    username: {type: String, unique: true},
+    username: { type: String, required: true, unique: true },
     password: String,
     // questions: [{type: mongoose.Schema.Types.ObjectId, ref: 'Question'}],
     questions: [{ type: mongoose.Schema.Types.ObjectId, ref: 'Question' }]
@@ -14,7 +14,7 @@ const User = mongoose.model('users', userSchema)
 
 //Question schema
 const questionSchema = new mongoose.Schema({
-    title: String,
+    title: { type: String, required: true, unique: true },
     body: String,
     answers: { type: [String], required: false },
     userId: { type: mongoose.Schema.Types.ObjectId, ref: 'User' }

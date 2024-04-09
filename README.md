@@ -9,3 +9,14 @@
 5. added user routes - login/signup
 6. created login/signup handlers
 7. 
+
+
+# Frontend TO-DOs
+- [x] Display notes in homepage from data.js file  [03.04.2024]
+- [ ] Create a Hero page for app startup with login/signup buttons
+
+
+# Backend
+Tech Stack : Node.js, Express.js, Prisma
+
+

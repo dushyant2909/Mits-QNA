@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux'
 import { login, logout, selectUser } from './store/slices/authSlice'
 import { Header, Loader } from './Components/index'
+import Footer from './Components/Footer'
 import { Outlet } from 'react-router-dom'
 
 import { Toaster } from 'react-hot-toast'
@@ -41,6 +42,7 @@ function App() {
       <main className='min-h-screen'>
         <Outlet />
       </main>
+      {/* <Footer /> */}
       <Toaster />
     </>
   )

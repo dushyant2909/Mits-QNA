@@ -29,7 +29,7 @@ function LeftSideBar() {
         }
     ]
     return (
-        <div>
+        <div className='fixed top-24 left-8'>
             <ul className='flex flex-col gap-5'>
                 {options.map((option) => (
                     <Link to={option.slug} key={option.name} className="flex items-center
