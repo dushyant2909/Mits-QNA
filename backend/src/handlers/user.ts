@@ -1,4 +1,4 @@
-import {PrismaClient} from '@prisma/client';
+import { PrismaClient } from '@prisma/client';
 import bcrypt from 'bcrypt';
 import { createJWT } from '../modules/auth';
 
@@ -13,7 +13,7 @@ export const signUp = async (req: any, res: any) => {
         },
     });
     const token = createJWT(user)
-    res.json({token});
+    res.json({ token });
 }
 
 export const logIn = async (req: any, res: any) => {

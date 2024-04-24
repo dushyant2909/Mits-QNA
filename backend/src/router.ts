@@ -12,7 +12,7 @@ const router = Router();
  * @throws {500} - Server error
  * @example GET /question
  */
-router.get('/question', getQuestions)
+router.get('/questions', getQuestions)
 
 /**
  * @route GET /question/:id
@@ -36,7 +36,7 @@ router.get('/question/:id', getQuestionById)
 router.post('/question', body('name').trim().notEmpty().isString(),
     (req, res, next) => {
         const result = validationResult(req);
-        if (result.isEmpty()) {
+        if (!result.isEmpty()) {
             res.send(`Product name ${req.body.name} Validated. Successfully!`)
         }
         else {
