@@ -21,50 +21,62 @@ function LogoutBtn() {
     //         })
     // }
 
+    // const logoutHandler = async () => {
+    //     try {
+    //         const response = await axios.post('/api/v1/users/logout');
+    //         console.log("Logout response::", response.data);
+    //         if (response.status === 201) {
+    //             dispatch(logout())
+    //         }
+    //         else {
+    //             console.log(response.data.message); // Assuming the backend sends error messages as JSON
+    //         }
+    //     } catch (error) {
+    //         // Handle network errors or other exceptions
+    //         if (error.response) {
+    //             // The request was made and the server responded with a status code
+    //             let errorMessage = 'Failed to logout'; // Default error message
+    //             try {
+    //                 // Parse the HTML response to extract the error message
+    //                 const parser = new DOMParser();
+    //                 const htmlDoc = parser.parseFromString(error.response.data, 'text/html');
+    //                 const preElement = htmlDoc.querySelector('pre');
+    //                 if (preElement) {
+    //                     // Extract the error message and format it
+    //                     const errorText = preElement.innerText.trim();
+
+    //                     // Search for the specific error message pattern
+    //                     const errorPattern = /Error: (.*)/; // This regex captures the message after "Error: "
+    //                     const match = errorPattern.exec(errorText);
+    //                     if (match && match.length > 1) {
+    //                         errorMessage = match[1]; // Extract the specific error message
+    //                     }
+    //                 }
+    //             } catch (parseError) {
+    //                 console.error('Error parsing HTML response:', parseError);
+    //             }
+    //             console.log(errorMessage);
+    //         } else if (error.request) {
+    //             // The request was made but no response was received
+    //             console.log('No response received from the server');
+    //         } else {
+    //             // Something else happened in making the request
+    //             console.log('Error in processing the request');
+    //         }
+    //         console.error('Error in logout:', error);
+    //     }
+    // }
+
     const logoutHandler = async () => {
         try {
             const response = await axios.post('/api/v1/users/logout');
-            if (response.status === 201) {
-                dispatch(logout())
-            }
-            else {
-                console.log(response.data.message); // Assuming the backend sends error messages as JSON
-            }
+            console.log("Logout response::", response.data);
+            dispatch(logout());
         } catch (error) {
-            // Handle network errors or other exceptions
-            if (error.response) {
-                // The request was made and the server responded with a status code
-                let errorMessage = 'Failed to logout'; // Default error message
-                try {
-                    // Parse the HTML response to extract the error message
-                    const parser = new DOMParser();
-                    const htmlDoc = parser.parseFromString(error.response.data, 'text/html');
-                    const preElement = htmlDoc.querySelector('pre');
-                    if (preElement) {
-                        // Extract the error message and format it
-                        const errorText = preElement.innerText.trim();
-
-                        // Search for the specific error message pattern
-                        const errorPattern = /Error: (.*)/; // This regex captures the message after "Error: "
-                        const match = errorPattern.exec(errorText);
-                        if (match && match.length > 1) {
-                            errorMessage = match[1]; // Extract the specific error message
-                        }
-                    }
-                } catch (parseError) {
-                    console.error('Error parsing HTML response:', parseError);
-                }
-                console.log(errorMessage);
-            } else if (error.request) {
-                // The request was made but no response was received
-                console.log('No response received from the server');
-            } else {
-                // Something else happened in making the request
-                console.log('Error in processing the request');
-            }
-            console.error('Error in logout:', error);
+            console.error("Error in logout::", error.request.statusText);
         }
     }
+
 
     return (
         <button

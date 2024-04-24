@@ -1,3 +1,5 @@
+// It simply is used to export components at one page to import simply
+
 import Header from "./Header/Header";
 import Logo from "./Logo";
 import SearchBar from "./SearchBar";
