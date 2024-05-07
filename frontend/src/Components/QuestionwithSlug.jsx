@@ -27,7 +27,7 @@ function QuestionwithSlug() {
           category="Q&A"
           categoryId="DIC_kwDOK_Bw2c4CcFnT"
           mapping="url"
-          term="Welcome to @giscus/react component!"
+          term={slug}
           reactionsEnabled="1"
           emitMetadata="0"
           inputPosition="top"
