@@ -1,22 +1,19 @@
+# Project Report
+[Google Docs Link](https://docs.google.com/document/d/1pxVULtei0k6UaBT7A4en4vqaZ0B3_FmR/edit?usp=sharing&ouid=117947585084173975374&rtpof=true&sd=true)
+<<<<<<< HEAD
 
-
-# Backend Journal
-
-1. started with server.js and did the necessary installs like {express, cors, mongoose, dotenv, etc.}
-2. added few routes to check if the server is working or not
-3. designed minimal schema for {user,question} using mongoose, for learning purpose...I will keep on adding on them.
-4. connected to 'mitsqna' db through ```mongoose.connect()```
-5. added user routes - login/signup
-6. created login/signup handlers
-7. 
-
-
-# Frontend TO-DOs
-- [x] Display notes in homepage from data.js file  [03.04.2024]
-- [ ] Create a Hero page for app startup with login/signup buttons
-
-
-# Backend
-Tech Stack : Node.js, Express.js, Prisma
-
-
+# Presentation
+![screenshot](docs/p1.jpg)
+![screenshot](docs/p2.jpg)
+![screenshot](docs/p3.jpg)
+![screenshot](docs/p4.jpg)
+![screenshot](docs/p5.jpg)
+![screenshot](docs/p6.jpg)
+![screenshot](docs/p7.jpg)
+![screenshot](docs/p72.png)
+![screenshot](docs/p8.jpg)
+![screenshot](docs/p9.jpg)
+![screenshot](docs/ui1.png)
+![screenshot](docs/ui2.png)
+=======
+>>>>>>> 47447f7605c5479d3fc153c64dd195aad6291b3d
